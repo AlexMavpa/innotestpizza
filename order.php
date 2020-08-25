@@ -161,12 +161,12 @@ if(isset($_POST['submitcart']) && (($_SESSION['cart']) OR (!empty($_COOKIE['cart
 {
 
 require "addfromform.php";
-echo deliveryUser();
+echo deliveryUser($totalprice);
 }
 elseif (($_SESSION['cart']) OR (!empty($_COOKIE['cart'])))
 {
 require "addfromstored.php";
-echo deliveryUser();
+echo deliveryUser($totalprice);
 
 }
 else
@@ -186,12 +186,12 @@ echo "<div style=\"width:100%;\">Dear Customer, you are logined as \"Guest\", yo
 if(isset($_POST['submitcart']) && (($_SESSION['cart']) OR (!empty($_COOKIE['cart']))))
 {
 require "addfromform.php";
-echo deliveryGuest();
+echo deliveryGuest($totalprice);
 }
 elseif (($_SESSION['cart']) OR (!empty($_COOKIE['cart'])))
 {
 require "addfromstored.php";
-echo deliveryGuest();
+echo deliveryGuest($totalprice);
 
 }
 else

@@ -92,9 +92,8 @@ setTimeout(\"redirectPost('order.php?result=success', { ".$postdata." });\",3000
 }
 
 
-function deliveryUser()
+function deliveryUser($totalprice)
 {
-$totalprice = "0";
 $phone = $_SESSION['phone'];
  $deliveryuser =  "</div></div>
  <h3>Delivery details:</h3>			
@@ -110,9 +109,8 @@ $phone = $_SESSION['phone'];
 }
 
 
-function deliveryGuest()
+function deliveryGuest($totalprice)
 {
-$totalprice = "0";
  $deliveryguest = "</div></div>
 <h3>Delivery details:</h3>
 <div class=\"control-group2\"><form action=\"\" method=\"post\" id=\"orderform\"><fieldset>".$innoPizzaForm."<label class=\"control-label2\" for=\"phone\">Phone </label><div class=\"controls2\"><input class=\"input-xlarge2\" required id=\"phone\" name=\"phone\" type=\"tel\" minlength=\"2\" maxlength=\"12\" pattern=\"[0-9+]+\" value=\"\" /></div></div>
