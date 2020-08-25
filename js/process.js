@@ -37,6 +37,19 @@ $.ajax({
   event.preventDefault();
 });
 
+ $( "#userinfo" ).submit(function( event ) {
+var msg   = $('#userinfo').serialize()
+$.ajax({
+  type: "POST",
+  url: 'edituser.php',
+  data: msg,
+  success: function(data) {
+  $('#editresults').html(data);
+  }
+ });
+  event.preventDefault();
+});
+
  $( "#orderform" ).submit(function( event ) {
 var msg   = $('#orderform').serialize()
 $.ajax({
