@@ -11,18 +11,19 @@ A guest can also make orders, but he has not personal area and he can't see orde
 0) make it OOP and MVC
 1) make an admin area, where admin can add/change/delete pizzas, users, see all orders and amount
 2) improve some things like bonuses and time-limited actions
+3) Optimize images
+4) Put ajax files into separate directory =)
 
 # Installation
 
 - Upload all files (except dump.sql) to your home site directory
 - Import the sql dump into your mysql database (using CLI or something like phpMyAdmin)
 - Insert the correct settings into dbconf.php (host, database name, username, pass)
-- Optimize images
-- Put ajax files into separate directory =)
+- Create mail account "no-reply@yourdomain.com" (or smth like this), define it in mailreg.php file
 
 # Requiments
 
-Web server + PHP (>=5.4) + MySQL
+Web server + PHP (>=5.4) + MySQL + EXIM (or another post service)
 
 This version is 1.1
 
