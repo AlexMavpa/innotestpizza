@@ -18,6 +18,7 @@ A guest can also make orders, but he has not personal area and he can't see orde
 - Import the sql dump into your mysql database (using CLI or something like phpMyAdmin)
 - Insert the correct settings into dbconf.php (host, database name, username, pass)
 - Optimize images
+- Put ajax files into separate directory =)
 
 # Requiments
 
