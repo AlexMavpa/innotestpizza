@@ -17,9 +17,12 @@ A guest can also make orders, but he has not personal area and he can't see orde
 - Upload all files (except dump.sql) to your home site directory
 - Import the sql dump into your mysql database (using CLI or something like phpMyAdmin)
 - Insert the correct settings into dbconf.php (host, database name, username, pass)
+- Optimize images
 
 # Requiments
 
 Web server + PHP (>=5.4) + MySQL
+
+This version is 1.1
 
 GNU GPL (c) Alexander Makharinets 2020
