@@ -7,7 +7,7 @@
 <a href="#">
 <img src="img/logo.png" alt="">
 </a>
-<h4>This project resource is available on github</h4>
+<h4>This project source is available on <a href="https://github.com/AlexMavpa/innotestpizza">github</a></h4>
 </div>
 </div>
 </div>
