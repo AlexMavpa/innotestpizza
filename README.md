@@ -6,10 +6,12 @@ A registered user can order pizza, and this order will be stored in his order hi
 
 A guest can also make orders, but he has not personal area and he can't see order history. Also guest do not recieve any mail.
 
+Delivery fee is free if total order amount is more than 20 €. If it is twenty or less, delivery fee is a fixed value (3 €)
+
 2 DO LIST:
 
 0) make it OOP and MVC
-1) make an admin area, where admin can add/change/delete pizzas, users, see all orders and amount
+1) make an admin area, where admin can add/change/delete pizzas, users, see all orders and amount, edit delivery fee
 2) improve some things like bonuses and time-limited actions
 3) optimize images
 4) put ajax files into separate directory =)
