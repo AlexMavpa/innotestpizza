@@ -94,7 +94,7 @@ if ($login) { echo "<li class=\"nav-item\"><a class=\"nav-link2\" href=\"cabinet
 <?php 
 $showInnoPizza = showInnoPizza();
 echo $showInnoPizza;
-			?>
+?>
 </div>
 </div>
 </div>

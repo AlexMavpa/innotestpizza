@@ -96,7 +96,7 @@ The courier will obligatorily give you a cashier's receipt and an order receipt 
 <p>Only Euros are accepted for payment.</p>
 <p>After placing an order on the site, if the user is not registered or has not previously made orders, the operator contacts the Client to confirm the order.</p>
 <p>Delivery is carried out strictly in accordance with the boundaries of the delivery area.</p>
-<p>When ordering two or more pizzas (at the same time), delivery cost is free.</p>
+<p>When ordering total is more than 20 €, delivery is free. If twenty or less - it will be 3 €</p>
 <p>The delivery time starts from the moment of receiving an electronic notification by e-mail about the acceptance of the order for work (for registered users) or from the moment the operator calls (for unregistered users).</p>
 </div>
 </div>

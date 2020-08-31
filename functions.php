@@ -94,11 +94,20 @@ setTimeout(\"redirectPost('order.php?result=success', { ".$postdata." });\",3000
 
 function deliveryUser($totalprice)
 {
+if ($totalprice > 20) {
+$delivery = 0;
+}
+else
+{
+$delivery = 3;
+}
+$totalprice += $delivery;
 $phone = $_SESSION['phone'];
  $deliveryuser =  "</div></div>
  <h3>Delivery details:</h3>			
 <div class=\"control-group2\"><form action=\"\" method=\"post\" id=\"orderform\"><fieldset>".$innoPizzaForm."<label class=\"control-label2\" for=\"phone\">Phone </label><div class=\"controls2\"><input class=\"input-xlarge2\" required id=\"phone\" name=\"phone\" type=\"tel\" minlength=\"2\" maxlength=\"12\" pattern=\"[0-9+]+\" value=\"".$phone."\" /></div></div>
 <div class=\"control-group2\"><label class=\"control-label2\" for=\"address\">Address *</label><div class=\"controls2\"><input class=\"input-xlarge2\" required id=\"address\" name=\"address\" type=\"text\" minlength=\"10\" maxlength=\"200\" pattern=\"[A-z0-9+,-/ ]+\" /></div></div>
+<span>Delivery: ".$delivery." €</span>
 <h3>Total price:</h3><span style=\"font-weight:bold;\">".$totalprice." €</span><hr>
 							<button type=\"submit\" name=\"submitorder\" class=\"btn btn-primary\" id=\"orderbtn\">Finish order now!</button>
 						<hr><div id=\"checkresults\"></div>
@@ -111,12 +120,21 @@ $phone = $_SESSION['phone'];
 
 function deliveryGuest($totalprice)
 {
+if ($totalprice > 20) {
+$delivery = 0;
+}
+else
+{
+$delivery = 3;
+}
+$totalprice += $delivery;
  $deliveryguest = "</div></div>
 <h3>Delivery details:</h3>
 <div class=\"control-group2\"><form action=\"\" method=\"post\" id=\"orderform\"><fieldset>".$innoPizzaForm."<label class=\"control-label2\" for=\"phone\">Phone </label><div class=\"controls2\"><input class=\"input-xlarge2\" required id=\"phone\" name=\"phone\" type=\"tel\" minlength=\"2\" maxlength=\"12\" pattern=\"[0-9+]+\" value=\"\" /></div></div>
 <div class=\"control-group2\"><label class=\"control-label2\" for=\"firstname\">First Name</label><div class=\"controls2\"><input class=\"input-xlarge2\" required id=\"firstname\" name=\"firstname\" type=\"text\" minlength=\"2\" maxlength=\"100\" pattern=\"[A-z0-9+,-/]+\" /></div></div>
 <div class=\"control-group2\"><label class=\"control-label2\" for=\"secondname\">Second Name</label><div class=\"controls2\"><input class=\"input-xlarge2\" required id=\"secondname\" name=\"secondname\" type=\"text\" minlength=\"2\" maxlength=\"100\" pattern=\"[A-z0-9+,-/]+\" /></div></div>
 <div class=\"control-group2\"><label class=\"control-label2\" for=\"address\">Address *</label><div class=\"controls2\"><input class=\"input-xlarge2\" required id=\"address\" name=\"address\" type=\"text\" minlength=\"10\" maxlength=\"200\" pattern=\"[A-z0-9+,-/ ]+\" /></div></div>
+<span>Delivery: ".$delivery." €</span>
 <h3>Total price:</h3><span style=\"font-weight:bold;\">".$totalprice." €</span><hr>
 							<button type=\"submit\" name=\"submitorder\" class=\"btn btn-primary\" id=\"orderbtn\">Finish order now!</button>
 						<hr><div id=\"checkresults\"></div>

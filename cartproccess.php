@@ -34,7 +34,16 @@ echo "<div class=\"numbers-row\">
 <div class=\"cartprice\">[".$cartmassive[3][$x]." €]</div><div class=\"incbutton moreless\"><span class=\"notext\" id=\"more".$cartmassive[0][$x]."\">+</span></div><input class=\"cartinput\" type=\"number\" min=\"1\" max=\"99\" name=\"".$cartmassive[0][$x]."\" id=\"".$cartmassive[0][$x]."\" value=\"".$cartmassive[2][$x]."\"><div class=\"decbutton moreless\"><span class=\"notext\" id=\"less".$cartmassive[0][$x]."\">-</span></div><div class=\"remove\"><span class=\"notext\" id=\"remove".$cartmassive[0][$x]."\">x</span></div></div>";
 $pizzasum[] = $cartmassive[3][$x] * $cartmassive[2][$x];
 }
-echo "<div class=\"numbers-row-total\"><span class=\"total\">TOTAL: € </span><span id=\"totalsum\" class=\"totalsum\">".array_sum($pizzasum)."</span></div";
+if (array_sum($pizzasum) > 20)
+{
+$delivery = 0;
+}
+else
+{
+$delivery = 3;
+$pizzasum[] = 3;
+}
+echo "<div class=\"numbers-row-delivery\"><span class=\"delivery\">Delivery: ".$delivery." € </span></div><div class=\"numbers-row-total\"><span class=\"total\">TOTAL: € </span><span id=\"totalsum\" class=\"totalsum\">".array_sum($pizzasum)."</span></div";
 
 }
 else
@@ -49,7 +58,16 @@ echo "<div class=\"numbers-row\">
 <div class=\"cartprice\">[".$cartmassive[3][$x]." €]</div><div class=\"incbutton moreless\"><span class=\"notext\" id=\"more".$cartmassive[0][$x]."\">+</span></div><input class=\"cartinput\" type=\"number\" min=\"1\" max=\"99\" name=\"".$cartmassive[0][$x]."\" id=\"".$cartmassive[0][$x]."\" value=\"".$cartmassive[2][$x]."\"><div class=\"decbutton moreless\"><span class=\"notext\" id=\"less".$cartmassive[0][$x]."\">-</span></div><div class=\"remove\"><span class=\"notext\" id=\"remove".$cartmassive[0][$x]."\">x</span></div></div>";
 $pizzasum[] = $cartmassive[3][$x] * $cartmassive[2][$x];
 }
-echo "<div class=\"numbers-row-total\"><span class=\"total\">TOTAL: € </span><span id=\"totalsum\" class=\"totalsum\">".array_sum($pizzasum)."</span></div";
+if (array_sum($pizzasum) > 20)
+{
+$delivery = 0;
+}
+else
+{
+$delivery = 3;
+$pizzasum[] = 3;
+}
+echo "<div class=\"numbers-row-delivery\"><span class=\"delivery\">Delivery: ".$delivery." € </span></div><div class=\"numbers-row-total\"><span class=\"total\">TOTAL: € </span><span id=\"totalsum\" class=\"totalsum\">".array_sum($pizzasum)."</span></div";
 $_SESSION['cart'] = $cartmassive;
 setcookie('cart', serialize($cartmassive), time()+60*60*24*30);
 }
@@ -77,7 +95,16 @@ echo "<div class=\"numbers-row\">
 <div class=\"cartprice\">[".$cartmassive[3][$x]." €]</div><div class=\"incbutton moreless\"><span class=\"notext\" id=\"more".$cartmassive[0][$x]."\">+</span></div><input class=\"cartinput\" type=\"number\" min=\"1\" max=\"99\" name=\"".$cartmassive[0][$x]."\" id=\"".$cartmassive[0][$x]."\" value=\"".$cartmassive[2][$x]."\"><div class=\"decbutton moreless\"><span class=\"notext\" id=\"less".$cartmassive[0][$x]."\">-</span></div><div class=\"remove\"><span class=\"notext\" id=\"remove".$cartmassive[0][$x]."\">x</span></div></div>";
 $pizzasum[] = $cartmassive[3][$x] * $cartmassive[2][$x];
 }
-echo "<div class=\"numbers-row-total\"><span class=\"total\">TOTAL: € </span><span id=\"totalsum\" class=\"totalsum\">".array_sum($pizzasum)."</span></div";
+if (array_sum($pizzasum) > 20)
+{
+$delivery = 0;
+}
+else
+{
+$delivery = 3;
+$pizzasum[] = 3;
+}
+echo "<div class=\"numbers-row-delivery\"><span class=\"delivery\">Delivery: ".$delivery." € </span></div><div class=\"numbers-row-total\"><span class=\"total\">TOTAL: € </span><span id=\"totalsum\" class=\"totalsum\">".array_sum($pizzasum)."</span></div";
 
 }
 else

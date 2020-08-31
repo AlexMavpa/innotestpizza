@@ -116,13 +116,21 @@ $cartmassive=unserialize($_COOKIE['cart']);
     $sthnew = $dbhnew->query("SELECT * from pizzas WHERE id IN (".str_replace("pizza", "", implode(',', $cartmassive[0])).")");
     while($rownew = $sthnew->fetch(PDO::FETCH_ASSOC))
 			{
-			$innoPizzaList .= "<div style=\"display:block;padding-left:0px;\"><span style=\"font-weight:bold;\">&bull; ".$rownew['name']."</span><span style=\"font-size: 14px;\"> (".$rownew['description'].") - <span><span class=\"price\" style=\"font-weight: bold;\">".$rownew['price']." €</span><span class=\"quantity\" id=\"pizza".$rownew['id']."\"> [".$cartmassive[2][$x]." pcs.]</span></div>";
+			$innoPizzaList .= "<div style=\"display:block;padding-left:0px;\"><p><span style=\"font-weight:bold;\">&bull; ".$rownew['name']."</span><span style=\"font-size: 14px;\"> (".$rownew['description'].") - </span><span class=\"price\" style=\"font-weight: bold;\">".$rownew['price']." €</span><span class=\"quantity\" id=\"pizza".$rownew['id']."\"> [".$cartmassive[2][$x]." pcs.]</span></p></div>";
 $totalprice += $rownew['price'] * $cartmassive[2][$x];
 $x++;
 			}
+if ($totalprice > 20) {
+$delivery = 0;
+}
+else
+{
+$delivery = 3;
+}
+$totalprice += $delivery;
 			$dbhnew = null;
 			echo $innoPizzaList;
-		echo	"<h3>Total price:</h3><p><span style=\"font-weight:bold;\">".$totalprice." €</span></p><p>We will make and deliver your pizza(s) in a hour.</p></div></div></div>";
+		echo	"<h3>Delivery:</h3><p><span style=\"font-size: 14px;\">".$delivery." €</span></p><h3>Total price:</h3><p><span style=\"font-weight:bold;\">".$totalprice." €</span></p><p>We will make and deliver your pizza(s) in a hour.</p></div></div></div>";
 unset($_SESSION['cart']);
 setcookie('cart', '', time());
 $datetime = date("Y-m-d H:i:s");
