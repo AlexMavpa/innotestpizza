@@ -5610,21 +5610,23 @@ button.close {
 
 .modal {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-left: -20%;
-    max-height:50%;
+    top: 25%;
+   /* left: 50%;*/
+   /* margin-left: -20%; */
+    margin: 0 25% 0 25%;
+    max-height:70%;
     min-height:220px;
     z-index: 10000;
     display: none;
     overflow: hidden;
    /* margin: -250px 0 0 -280px; */
     background-color: #ffffff;
-    width: 40%;
+    width: 50%;
     min-width:260px;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 6px;
-    margin-top: -5%;
+    padding-left:16px;
+   /* margin-top: -5%; */
     
     
 }
