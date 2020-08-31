@@ -11,8 +11,10 @@ A guest can also make orders, but he has not personal area and he can't see orde
 0) make it OOP and MVC
 1) make an admin area, where admin can add/change/delete pizzas, users, see all orders and amount
 2) improve some things like bonuses and time-limited actions
-3) Optimize images
-4) Put ajax files into separate directory =)
+3) optimize images
+4) put ajax files into separate directory =)
+5) hide .php extensions in urls via .htaccess
+6) make pizza great again
 
 # Installation
 
