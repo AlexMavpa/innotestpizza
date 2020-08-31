@@ -141,7 +141,7 @@ if ($_SESSION['auth'] == false)  {
     else
     {
     $sth = $dbh->query("INSERT INTO orders (datetime,userid,pizzaid,quantity,phone,address) VALUES ('".$datetime."','".$_SESSION['id']."', '".serialize($cartmassive[0])."', '".serialize($cartmassive[2])."','".$newphone."','".$address."')");
-    $mess2 = "Glad to see you, ".$login."! Thank you for this order. Your pizza will be cooked ASAP (maximum withing an hour). Your order:<br>".strip_tags($innoPizzaList)."<br> Total price is ".$totalprice." €<br><b> Bon appetit!</b>";
+    $mess2 = "Glad to see you, ".$login."! Thank you for this order. Your pizza will be cooked ASAP (maximum withing an hour). Your order:<br>".strip_tags($innoPizzaList, '<p>')."<br> Total price is ".$totalprice." €<br><b> Bon appetit!</b>";
 $subject = "Your order on InnoTestPizza";
 require "mailreg.php";
     }
