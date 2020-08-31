@@ -9,7 +9,7 @@
 				<form class="form-horizontal" action="" method="post" id="loginform"/>
 					<fieldset>
 						<div class="control-group">
-							<label class="control-label" for="icontact_name">Your Mail :</label>
+							<label class="control-label" for="icontact_name">Your Mail:</label>
 							<div class="controls">
 								<input required class="input-xlarge" id="email" name="mail" type="email" />
 							</div>
@@ -34,7 +34,7 @@
 				<form class="form-horizontal" action="" method="post" id="forgotform"/>
 					<fieldset>
 						<div class="control-group">
-							<label class="control-label" for="icontact_name">Your Mail :</label>
+							<label class="control-label" for="icontact_name">Your Mail:</label>
 							<div class="controls">
 								<input required class="input-xlarge" id="email" name="mail" type="email" />
 							</div>
