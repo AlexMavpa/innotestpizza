@@ -17,7 +17,9 @@
 </p>
 </div>
 </div>
-<div class="onlyformobile"><img width="75px" class="mavchangecartmobile" id="mavchangecartmobile" src="img/shoppingcartnewmobile.png"></div>
+
+<div class="onlyformobile"><div style="width:75px;height:80px;background-image: url(img/shoppingcartnewmobile.png);background-repeat: no-repeat;background-position:center;" id="mavchangecartmobile" class="mavchangecartmobile"><?php echo "<div class=\"cartcircle\" style=\"padding:0px 0px;\"><span id=\"cartnumbermobile\" style=\"font-size:12px;font-weight:bold;\">".$count."</span></div>"; ?></div></div>
+
 
 <div class="showcartmobile onlyformobile" id="showcartmobile"><div style="display:block;height:30px;"><div style="display:inline-block;float:left;"><b>YOUR CART</b></div><div id="closecartmobile" style="display:inline-block;float:right;">CLOSE <b>X</b></div></div><hr>
 <form class="form-horizontal" action="/order.php" method="post" id="cartproccess"/>

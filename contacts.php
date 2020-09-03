@@ -39,7 +39,7 @@ require "start.php";
 <?php 
 if ($login) { echo "<li class=\"nav-item\"><a class=\"nav-link2\" href=\"cabinet.php\">".$login."</a></li><li class=\"nav-item\"><a class=\"nav-link\" onclick=\"return confirmpizzalogout()\" href=\"logout.php\"><img width=\"16px\" src=\"img/logoutnew.png\"> LOGOUT</a></li>"; } else { echo  "<li class=\"nav-item\"><a data-toggle=\"modal\" class=\"nav-link\" href=\"#login\"><img width=\"16px\" src=\"img/loginnew.png\"> LOGIN</a></li>";} 
 ?> 
-<li id="cartlink" class="nav-item notformobile"><span class="nav-link"><img width="35px" id="mavchangecart" class="mavchangecart" src="img/shoppingcartnew.png"></span></li>
+<li id="cartlink" class="nav-item notformobile"><div style="width:35px;height:37px;background-image: url(img/shoppingcartnew2.png);background-repeat: no-repeat;background-position:center;" id="mavchangecart" class="mavchangecart"><?php echo "<div class=\"cartcircle\" style=\"padding:0px 0px;\"><span id=\"cartnumber\" style=\"font-size:12px;font-weight:bold;\">".$count."</span></div>"; ?></div></li>
 <li class="showcart notformobile" id="showcart"><div style="display:block;height:30px;"><div style="display:inline-block;float:left;"><b>YOUR CART</b></div><div id="closecart" style="display:inline-block;float:right;">CLOSE <b>X</b></div></div><hr>
 <form class="form-horizontal" action="/order.php" method="post" id="cartproccess"/>
 <fieldset>

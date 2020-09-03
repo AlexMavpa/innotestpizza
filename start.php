@@ -34,4 +34,24 @@ if (empty($_SESSION['auth']) or $_SESSION['auth'] == false) {
 	$secondname = $_SESSION['secondname'];
 	$mail = $_SESSION['mail'];
 	}
+	
+		if (($_SESSION['cart']) OR (!empty($_COOKIE['cart'])))
+{
+
+if (!empty($_COOKIE['cart']))
+{
+$count = array_sum(unserialize($_COOKIE['cart'])[2]);
+//var_dump($count);
+}
+
+elseif ($_SESSION['cart'])
+{
+$count = array_sum($_SESSION['cart'][2]);
+//var_dump($count);
+}
+}
+else
+{
+$count = 0;
+}
 	?>
