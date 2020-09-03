@@ -37,11 +37,9 @@
 <script src="js/stellar.js" type="text/javascript"></script>
 <script src="js/jquery.magnific-popup.min.js" type="text/javascript"></script>
 <script src="js/jquery.ajaxchimp.min.js" type="text/javascript"></script>
-<script src="js/mail-script.js" type="text/javascript"></script>
 <script src="js/showhideconfirm.js" type="text/javascript"></script>
 <script src="js/process.js"></script>
 
-<script src="js/gmaps.min.js" type="text/javascript"></script>
 <script src="js/theme.js" type="text/javascript"></script>
 </body>
 </html>
