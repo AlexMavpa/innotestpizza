@@ -1,3 +1,21 @@
+function updateCartNumber() {
+if  (getCookie('cart') != null) {
+   var d = unserialize(decodeURIComponent(getCookie('cart')))[2];
+   var e = d.map(string => +string);
+   var summa = 0;
+   for (let i = 0; i < e.length; i++) {
+  e[i] = +e[i];
+  summa+= e[i];
+  }
+  $('#cartnumber').html(summa);
+  $('#cartnumbermobile').html(summa);
+  }
+  else {
+  $('#cartnumber').html('0');
+  $('#cartnumbermobile').html('0');
+  }
+}
+
 $( "#loginform" ).submit(function( event ) {
 var msg   = $('#loginform').serialize()
 $.ajax({
@@ -76,19 +94,7 @@ $.ajax({
   },
   success: function(data) {
   $('#cartcontents').html(data);
-  if  (getCookie('cart') != null) {
-   var d = unserialize(decodeURIComponent(getCookie('cart')))[2];
-   var e = d.map(string => +string);
-   var summa = 0;
-   for (let i = 0; i < e.length; i++) {
-  e[i] = +e[i];
-  summa+= e[i];
-  }
-  $('#cartnumber').html(summa);
-  }
-  else {
-  $('#cartnumber').html('0');
-  }
+updateCartNumber();
   }
  });
  if (($('body').find('span#totalsum').html() == "0") || ($('body').find('span#totalsum').html() == "undefined")) {
@@ -104,7 +110,7 @@ $('.cartbtn').css('background', '');
 });
 
 $( "#mavchangecartmobile" ).click(function( event ) {
-document.getElementById('showcartmobile').style.cssText= `display: block;position: fixed;bottom: 80px;z-index: 9999;width: 350px;right: 0px; border-radius: 15px; -moz-border-radius: 15px;`;
+document.getElementById('showcartmobile').style.cssText= `display: block;position: fixed;bottom: 90px;z-index: 9999;width: 350px;right: 0px; border-radius: 15px; -moz-border-radius: 15px;`;
 var msg = '0'
 $.ajax({
   type: "POST",
@@ -114,19 +120,7 @@ $.ajax({
   },
   success: function(data) {
   $('#cartcontentsmobile').html(data);
-  if  (getCookie('cart') != null) {
-   var d = unserialize(decodeURIComponent(getCookie('cart')))[2];
-   var e = d.map(string => +string);
-   var summa = 0;
-   for (let i = 0; i < e.length; i++) {
-  e[i] = +e[i];
-  summa+= e[i];
-  }
-  $('#cartnumbermobile').html(summa);
-  }
-  else {
-  $('#cartnumbermobile').html('0');
-  }
+updateCartNumber();
   }
  });
  if (($('body').find('span#totalsum').html() == "0") || ($('body').find('span#totalsum').html() == "undefined")) {
@@ -199,16 +193,16 @@ $.ajax({
    $('img.mavchangecart').attr('style', 'filter:drop-shadow(5px 5px 5px #222);');
    $('img.mavchangecartmobile').attr('style', 'filter:drop-shadow(5px 5px 5px #222);');
    $('li.showcart').attr('style', 'display: block;position: absolute;top: 60px;z-index: 9999;width: 400px;right: 0px;');
-   $('div.showcartmobile').attr('style', 'display: block;position: fixed;bottom: 80px;z-index: 9999;width: 350px;right: 0px;');
-  $("#mavchangecart").trigger("click"); // new
+   $('div.showcartmobile').attr('style', 'display: block;position: fixed;bottom: 90px;z-index: 9999;width: 350px;right: 0px;');
+  $("#mavchangecart").trigger("click");
    setTimeout(function () {
 $('img.mavchangecart').removeAttr('style')
 }, 700);
-$("#mavchangecartmobile").trigger("click"); // new
+$("#mavchangecartmobile").trigger("click"); 
    setTimeout(function () {
 $('img.mavchangecartmobile').removeAttr('style')
 }, 700)
-//  }
+
   
   }
  });
@@ -233,8 +227,7 @@ $(document).ready(function() {
         success: function(data) {
         $('#cartcontents').html(data);
         $('#cartcontentsmobile').html(data);
-        $("#mavchangecart").trigger("click");
-        $("#mavchangecartmobile").trigger("click");
+        updateCartNumber();
         }
         });
   	} else {
@@ -250,9 +243,8 @@ $(document).ready(function() {
         },
         success: function(data) {
         $('#cartcontents').html(data);
-        $('#cartcontentsmobile').html(data);
-        $("#mavchangecart").trigger("click");
-        $("#mavchangecartmobile").trigger("click");
+        $('#cartcontentsmobile').html(data);       
+        updateCartNumber();
         }
         });
 	    } else {
@@ -278,8 +270,7 @@ $(document).ready(function() {
         success: function(data) {
         $('#cartcontents').html(data);
         $('#cartcontentsmobile').html(data);
-        $("#mavchangecart").trigger("click");
-        $("#mavchangecartmobile").trigger("click");
+        updateCartNumber();
         }
         });
          event.preventDefault();
@@ -302,8 +293,7 @@ $(document).ready(function() {
         success: function(data) {
         $('#cartcontents').html(data);
         $('#cartcontentsmobile').html(data);
-        $("#mavchangecart").trigger("click");
-        $("#mavchangecartmobile").trigger("click");
+        updateCartNumber();
         }
         }); 
  event.preventDefault();
